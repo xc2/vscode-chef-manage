@@ -1,0 +1,64 @@
+{
+  "name": "chef-manage",
+  "displayName": "Chef Manage",
+  "description": "Chef Manage",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "chef-manage.helloWorld",
+        "title": "Hello World"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "chef-manage",
+          "title": "Chef Manage",
+          "icon": "resources/chef.svg"
+        }
+      ]
+    },
+    "views": {
+      "chef-manage": [
+        {
+          "id": "chef-nodes",
+          "name": "Nodes",
+          "icon": "resources/chef.svg"
+        },
+        {
+          "id": "chef-clients",
+          "name": "Clients",
+          "icon": "resources/chef.svg"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "rslib build",
+    "watch": "rslib build -w",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@rslib/core": "^0.2.2",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20",
+    "@types/vscode": "^1.96.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "typescript": "^5.7.2"
+  },
+  "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee",
+  "dependencies": {
+    "barhop": "npm:@canary-109cafe/barhop@fix-types",
+    "wayfarer": "^7.0.1"
+  }
+}
